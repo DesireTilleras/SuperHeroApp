@@ -1,0 +1,46 @@
+﻿@page
+@model SuperHeroApp.UI.Pages.Heroes.SignUpPageModel
+@{
+}
+
+
+
+<form method="post" onsubmit="">
+    <div style="text-align:center" class="container">
+        <div class="row pt-5">
+            <div class="col">
+                <input placeholder="Superhero name" type="text" asp-for="@Model.SuperHero.Name" />
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col">
+                <input placeholder="Your secret identity" type="text" asp-for="@Model.SuperHero.SecretIdentity" />
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col">
+                <select id="SuperPowers" asp-for="@Model.SuperHero.Powers">
+                    <option selected="selected" value=""></option>
+                    <option value="hej">hej</option>
+                    @foreach (var power in Model.powerList)
+                    {
+                        <option value="@power">@power</option>
+                    }
+
+                </select>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col">
+                <input class="btn-success" type="submit" value="Push it!" />
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col">
+                <a class="btn btn-info" asp-page="/Index"> Fly back to front page! </a>
+            </div>
+        </div>
+    </div>
+</form>
+
+

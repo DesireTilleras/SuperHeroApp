@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="container" style="text-align:center">
+    <div class="row pt-5">
+        <div class="col">
+            <h1> Hello Hero!! Wan't to join the most awesome club ever?</h1>
+        </div>
+    </div>
+    
+    <div class="row pt-5">
+        <div class="col">
+            <a class="btn btn-primary btn-lg login" asp-page="/Heroes/SignUpPage">Sign up here!</a>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col">
+            <a class="btn btn-primary btn-lg login" asp-page="/Heroes/ChangeHeroPage">Change a hero here!</a>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col">
+            <a class="btn btn-primary btn-lg login" asp-page="/Heroes/ListAllHeroes">See the list of all heroes here!</a>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col">
+            <img src="~/SuperHerosPics/heroespic.jpeg" />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

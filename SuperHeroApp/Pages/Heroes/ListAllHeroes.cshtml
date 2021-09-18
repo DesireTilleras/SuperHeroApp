@@ -1,0 +1,40 @@
+﻿@page
+@model SuperHeroApp.UI.Pages.ListAllHeroesModel
+@{
+}
+<div class="container" style="text-align:center">
+    <div class="row pt-5">
+        <div class="col">
+            <a class="btn btn-info" asp-page="/Index"> Fly back to front page! </a>
+        </div>
+    </div>
+</div>
+
+
+
+@foreach (var hero in SuperHeroApp.UI.Pages.ListAllHeroesModel.Heroes)
+{
+<div class="container">
+    <div class="row pt-3">
+        <div class="col">
+            <div class="row">
+                <h2>ID : @hero.Id</h2>
+            </div>
+            <div class="row">
+                <h2>Name: @hero.Name</h2>
+            </div>
+            <div class="row">
+                <h2>Secret id: @hero.SecretIdentity</h2>
+            </div>
+            <div class="row">
+                <h2>Powers: @hero.Powers</h2>
+            </div>
+        </div>
+        <div class="col">
+            <img src="@hero.ImageURL" />
+        </div>
+    </div>
+</div>
+
+
+}

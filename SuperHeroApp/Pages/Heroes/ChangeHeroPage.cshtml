@@ -1,0 +1,77 @@
+﻿@page
+@model SuperHeroApp.UI.Pages.Heroes.ChangeHeroPageModel
+@{
+}
+
+
+<div class="container" style="text-align:center">
+    <div class="row pt-5">
+        <div class="col">
+            <a class="btn btn-info" asp-page="/Index"> Fly back to front page! </a>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col">
+            <label for="heroes">Choose a superhero that you want to change: </label>
+            <select id="SuperHeroName">
+                <option value="hej"></option>
+                @foreach (var item in @Model.ListOfSuperHeros)
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
+
+
+@foreach (var hero in @Model.ListOfSuperHeros)
+{
+    <div class="container heros" id="@hero.Name" style=" display:none;">
+        <div class="row pt-5">
+            <div class="col">
+                <div class="row">
+                    <h2>ID : @hero.Id</h2>
+                </div>
+                <div class="row">
+                    <h2>Name: @hero.Name</h2>
+                </div>
+                <div class="row">
+                    <h2>Secret id: @hero.SecretIdentity</h2>
+                </div>
+                <div class="row">
+                    <h2>Powers: @hero.Powers</h2>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="name">Enter new name:  </label>
+                        <form method="post">
+                            <input type="text" asp-for="@Model.NewName" id="name" /> <br />
+                            <label for="power">Choose new power:  </label><br />
+                            <select id="SuperPowers" asp-for="@Model.NewPower">
+                                <option selected="selected" value=""></option>
+                                <option value="hej"></option>
+                                @foreach (var power in Model.powerList)
+                                {
+                                    <option value="@power">@power</option>
+                                }
+
+                            </select>
+                            <br /><br />
+                            <input class="btn-success" value="Push it!" type="submit" asp-route-id="@hero.Id" />
+
+                        </form>
+                    </div>
+                   
+                </div>                
+            </div>
+
+            <div class="col">
+                <img src="@hero.ImageURL" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
